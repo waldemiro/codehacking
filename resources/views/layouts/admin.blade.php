@@ -11,11 +11,14 @@
 
     <title>Admin</title>
 
+    {{--trying to fix error "Uncaught Error: Bootstrap's JavaScript requires jQuery": --}}
+    {{--jQuery--}}
+    {{--<script src="{{asset('js/libs.js')}}"></script>--}}
+
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,8 +27,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-
+    @yield('styles')
 
 </head>
 
@@ -181,11 +183,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/media">All Media</a>
+                                <a href="{{route('admin.media.index')}}">All Media</a>
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{route('admin.media.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
@@ -360,12 +362,7 @@
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
 
-
-@yield('footer')
-
-
-
-
+@yield('scripts')
 
 </body>
 
