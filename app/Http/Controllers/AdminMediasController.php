@@ -23,7 +23,7 @@ class AdminMediasController extends Controller
         $file = $request->file('file');
         $name = time() . $file->getClientOriginalName();
         $file->move('images', $name);
-        Photo::create(['file'=>name]);
+        Photo::create(['file'=>$name]);
     }
 
     // Not tested because of previous unsolved error with store images through dropzonejs.
